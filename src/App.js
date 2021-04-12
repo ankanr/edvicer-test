@@ -1,37 +1,26 @@
 import React, { useState } from "react";
 import "./index.css";
 import DropDown from "./Components/DropDown";
+import options from "./options/options";
+import choices from "./options/choices";
+import RenderCourses from "./Components/RenderCourses";
+import RenderSubjects from "./Components/RenderSubjects";
 
 const App = () => {
-  const options = [
-    {
-      label: "Machine Learning",
-      value: "ml",
-    },
-    {
-      label: "Data Structures",
-      value: "dsa",
-    },
-    {
-      label: "Java",
-      value: "jv",
-    },
-    {
-      label: "Python",
-      value: "py",
-    },
-  ];
+  const [choice, setChoice] = useState(choices[0]);
 
-  const [course, setCourse] = useState(options[0]);
   return (
-    <div className='header'>
+    <div className='container'>
       <h1>What are you skilled in ?</h1>
       <DropDown
-        selected={course}
-        onSelectedChange={setCourse}
-        options={options}
+        className='dropdown'
+        selected={choice}
+        onSelectedChange={setChoice}
+        choices={choices}
         label='Select a course'
       />
+      <RenderSubjects options={options} choice={choice} />
+      <RenderCourses options={options} choice={choice} />
     </div>
   );
 };

@@ -1,5 +1,23 @@
-.header {
+/* .header {
   position: absolute;
   top: 35%;
   left: 45%;
+}
+
+.dropdown {
+  max-width: 50rem;
+} */
+
+.container {
+  max-width: 70rem;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
+  color: blue;
 }
