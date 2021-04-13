@@ -5,6 +5,8 @@ This project was done using React.js only.
 
 To get a copy of the project run `git clone https://github.com/ankanr/edvicer-test.git` in code editor.
 
+The application does what was wanted almost except a few functionalities like `show more` gets activated once the the course selected is beyond the show more, also the click on the subjects to turn the pages of courses doesn't work, and lastly the search on the `dropdown` doesn't work.
+
 ## Available Scripts
 
 Before running any scripts do run `npm install`.
