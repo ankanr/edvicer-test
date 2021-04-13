@@ -1,8 +1,12 @@
-# Getting Started with Create React App
+# Assignment for Edvicer Front End Developer Internship
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was done using React.js only.
+
+To get a copy of the project run `git clone `
 
 ## Available Scripts
+
+Before running any scripts do run `npm install`.
 
 In the project directory, you can run:
 
