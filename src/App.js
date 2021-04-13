@@ -9,6 +9,7 @@ import RenderSubjects from "./Components/RenderSubjects";
 
 const App = () => {
   const [choice, setChoice] = useState(choices[0]);
+
   const [subjectList, setSubjectList] = useState([]);
   const [limitTo, setLimitTo] = useState(10);
   const onLoadMore = () => {
@@ -45,13 +46,11 @@ const App = () => {
       <RenderCourses
         options={options}
         selected={choice}
-        choices={choices}
         onSelectedChange={setChoice}
       />
       <RenderSubjects
         options={options}
         selected={choice}
-        onSelectedChange={setChoice}
         subjectList={subjectList}
         setSubjectList={setSubjectList}
         onLoadMore={onLoadMore}

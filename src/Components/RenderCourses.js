@@ -1,6 +1,6 @@
 import React from "react";
 
-const RenderCourses = ({ options, choices, selected, onSelectedChange }) => {
+const RenderCourses = ({ options, selected, onSelectedChange }) => {
   return (
     <div className='ui horizontal list'>
       {options.map((option) => {

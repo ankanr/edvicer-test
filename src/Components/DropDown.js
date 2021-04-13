@@ -65,12 +65,7 @@ const DropDown = ({
             open ? "visible active" : ""
           }`}
         >
-          <input
-            type='text'
-            name='course'
-            value={selected}
-            onChange={onSelectedChange}
-          />
+          <input type='text' name='course' />
           <i className='dropdown icon'></i>
           <div className='text'>{selected}</div>
           <div className={`menu ${open ? "visible transition" : ""}`}>

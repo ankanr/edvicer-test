@@ -5,7 +5,6 @@ import ShowMore from "./ShowMore";
 const RenderSubjects = ({
   options,
   selected,
-  onSelectedChange,
   subjectList,
   setSubjectList,
   limitTo,
@@ -20,7 +19,6 @@ const RenderSubjects = ({
               <Subjects
                 subject={subject}
                 key={index}
-                onSelectedChange={onSelectedChange}
                 subjectList={subjectList}
                 setSubjectList={setSubjectList}
               />
