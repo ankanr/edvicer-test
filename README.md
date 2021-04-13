@@ -1,8 +1,9 @@
 # Assignment for Edvicer Front End Developer Internship
+The repo belongs to @ankanr.
 
 This project was done using React.js only.
 
-To get a copy of the project run `git clone `
+To get a copy of the project run `git clone https://github.com/ankanr/edvicer-test.git` in code editor.
 
 ## Available Scripts
 
