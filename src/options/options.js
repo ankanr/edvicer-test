@@ -2,6 +2,7 @@ const options = [
   {
     id: "0",
     course: "Arts & Humanities",
+    count: 0,
     sub: [
       "Editing",
       "3ds Max",
@@ -20,7 +21,6 @@ const options = [
       "3d Artist",
       "2d Animation",
       "2d",
-      "Graphic Designer",
       "Illustration",
       "Artist",
       "2d Artist",
@@ -121,6 +121,7 @@ const options = [
   {
     id: "1",
     course: "Business",
+    count: 0,
     sub: [
       "Digital Marketing",
       "Entrepreneurship",
@@ -211,6 +212,7 @@ const options = [
   {
     id: "2",
     course: "Computer Science",
+    count: 0,
     sub: [
       "Cloud Computing",
       "Programming Languages",
@@ -306,6 +308,7 @@ const options = [
   {
     id: "3",
     course: "Engineering & Science",
+    count: 0,
     sub: [
       "es-1",
       "es-2",
@@ -392,6 +395,7 @@ const options = [
   {
     id: "4",
     course: "Health",
+    count: 0,
     sub: [
       "h-1",
       "h-2",
@@ -478,6 +482,7 @@ const options = [
   {
     id: "5",
     course: "Mathematics",
+    count: 0,
     sub: [
       "m-1",
       "m-2",
@@ -564,6 +569,7 @@ const options = [
   {
     id: "6",
     course: "Personality Development",
+    count: 0,
     sub: [
       "pd-1",
       "pd-2",
@@ -650,6 +656,7 @@ const options = [
   {
     id: "7",
     course: "Social Science",
+    count: 0,
     sub: [
       "ss-1",
       "ss-2",

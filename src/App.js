@@ -5,22 +5,58 @@ import options from "./options/options";
 import choices from "./options/choices";
 import RenderCourses from "./Components/RenderCourses";
 import RenderSubjects from "./Components/RenderSubjects";
+// import ShowMore from "./Components/ShowMore";
 
 const App = () => {
   const [choice, setChoice] = useState(choices[0]);
+  const [subjectList, setSubjectList] = useState([]);
+  const [limitTo, setLimitTo] = useState(10);
+  const onLoadMore = () => {
+    setLimitTo(limitTo + 10);
+  };
+  const countCourse = () => {
+    options.map((option) => {
+      let count = 0;
+      subjectList.map((subject) => {
+        if (option.sub.includes(subject)) {
+          count++;
+        }
+        return null;
+      });
+      option.count = count;
+      return null;
+    });
+  };
+
+  countCourse();
 
   return (
     <div className='container'>
       <h1>What are you skilled in ?</h1>
       <DropDown
-        className='dropdown'
         selected={choice}
         onSelectedChange={setChoice}
         choices={choices}
-        label='Select a course'
+        label='Search for and select your skills below'
+        subjectList={subjectList}
+        setSubjectList={setSubjectList}
+        onLoadMore={onLoadMore}
       />
-      <RenderSubjects options={options} choice={choice} />
-      <RenderCourses options={options} choice={choice} />
+      <RenderCourses
+        options={options}
+        selected={choice}
+        choices={choices}
+        onSelectedChange={setChoice}
+      />
+      <RenderSubjects
+        options={options}
+        selected={choice}
+        onSelectedChange={setChoice}
+        subjectList={subjectList}
+        setSubjectList={setSubjectList}
+        onLoadMore={onLoadMore}
+        limitTo={limitTo}
+      />
     </div>
   );
 };

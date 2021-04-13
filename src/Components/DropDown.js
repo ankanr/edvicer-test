@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const DropDown = ({ selected, onSelectedChange, choices, label }) => {
+const DropDown = ({
+  selected,
+  onSelectedChange,
+  choices,
+  label,
+  subjectList,
+  setSubjectList,
+  onLoadMore,
+  limitTo,
+}) => {
   const [open, setOpen] = useState(false);
   const ref = useRef();
   let k = 0;
@@ -21,30 +30,26 @@ const DropDown = ({ selected, onSelectedChange, choices, label }) => {
     };
   }, []);
 
-  // const renderedOptions = options.map((option) => {
-  //   if (option.id === selected.id) {
-  //     return null;
-  //   }
-
-  //   return (
-  //     <div
-  //       class='item'
-  //       key={option.id}
-  //       className='item'
-  //       onClick={() => onSelectedChange(option)}
-  //     >
-  //       {option.sub}
-  //     </div>
-  //   );
-  // });
-
   const renderedOptions = choices.map((choice, index) => {
     if (choices[index] === selected) {
       return null;
     }
 
     return (
-      <div key={k++} className='item' onClick={() => onSelectedChange(choice)}>
+      <div
+        key={k++}
+        className='item'
+        onClick={() => {
+          if (!subjectList.includes(choice)) {
+            const newSubList = [...subjectList, choice];
+            setSubjectList(newSubList);
+            while (index > limitTo) {
+              onLoadMore();
+            }
+          }
+          onSelectedChange(choice);
+        }}
+      >
         {choice}
       </div>
     );
@@ -62,7 +67,6 @@ const DropDown = ({ selected, onSelectedChange, choices, label }) => {
         >
           <input type='text' name='course' />
           <i className='dropdown icon'></i>
-          {/* <div className='text'>{selected.sub}</div> */}
           <div className='text'>{selected}</div>
           <div className={`menu ${open ? "visible transition" : ""}`}>
             {renderedOptions}

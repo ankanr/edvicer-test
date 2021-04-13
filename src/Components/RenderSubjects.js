@@ -1,21 +1,36 @@
 import React from "react";
+import Subjects from "./Subjects";
+import ShowMore from "./ShowMore";
 
-const RenderSubjects = ({ options, choice }) => {
+const RenderSubjects = ({
+  options,
+  selected,
+  onSelectedChange,
+  subjectList,
+  setSubjectList,
+  limitTo,
+  onLoadMore,
+}) => {
   return (
-    <div className='ui horizontal list'>
+    <div className='ui white labels'>
       {options.map((option) => {
-        return (
-          <div className='item' key={option.id}>
-            <div
-              className={`middle aligned ${
-                option.sub.includes(choice) ? "bold" : ""
-              } content`}
-            >
-              {option.course}
-            </div>
-          </div>
-        );
+        if (option.sub.includes(selected))
+          return option.sub.slice(0, limitTo).map((subject, index) => {
+            return (
+              <Subjects
+                subject={subject}
+                key={index}
+                onSelectedChange={onSelectedChange}
+                subjectList={subjectList}
+                setSubjectList={setSubjectList}
+              />
+            );
+          });
+        return null;
       })}
+      <div>
+        <ShowMore choice={selected} onLoadMore={onLoadMore} />
+      </div>
     </div>
   );
 };

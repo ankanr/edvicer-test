@@ -17,7 +17,6 @@ const choices = [
   "3d Artist",
   "2d Animation",
   "2d",
-  "Graphic Designer",
   "Illustration",
   "Artist",
   "2d Artist",

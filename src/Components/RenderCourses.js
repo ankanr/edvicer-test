@@ -1,18 +1,24 @@
 import React from "react";
 
-const RenderCourses = ({ options, choice }) => {
+const RenderCourses = ({ options, choices, selected, onSelectedChange }) => {
   return (
-    <div className='ui blue labels'>
+    <div className='ui horizontal list'>
       {options.map((option) => {
-        if (option.sub.includes(choice))
-          return option.sub.map((subject, index) => {
-            return (
-              <div className='ui label' key={index}>
-                {subject}
-              </div>
-            );
-          });
-        return null;
+        return (
+          <div className='item' key={option.id}>
+            <div
+              className={`subject middle aligned ${
+                option.sub.includes(selected) ? "bold" : ""
+              } content`}
+              onClick={() => onSelectedChange(selected)}
+            >
+              {option.course}
+              <span className='count'>
+                <sup>{option.count !== 0 ? option.count : ""}</sup>
+              </span>
+            </div>
+          </div>
+        );
       })}
     </div>
   );

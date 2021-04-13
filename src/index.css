@@ -1,23 +1,61 @@
-/* .header {
-  position: absolute;
-  top: 35%;
-  left: 45%;
+* {
+  font-size: 1.2rem;
+}
+.container {
+  max-width: 1500px;
+  margin: auto;
+  margin-top: 20rem;
+  text-align: center;
 }
 
-.dropdown {
-  max-width: 50rem;
-} */
-
-.container {
-  max-width: 70rem;
-  position: absolute;
-  top: 40%;
-  left: 30%;
-  margin: auto;
-  text-align: center;
+.label {
+  font-size: large;
 }
 
 .bold {
   font-weight: bold;
   color: blue;
+}
+
+.ui.horizontal.list {
+  margin-top: 15px;
+  display: flex;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subject {
+  font-size: 1.5rem;
+}
+
+.subject:hover {
+  cursor: pointer;
+}
+
+.ui.label.tags {
+  font-size: 1.75rem;
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+
+.ui.label.tags:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+
+.ui.label.tags:active {
+  background-color: blue;
+  color: white;
+}
+
+.ui.label.tags.alive {
+  background-color: blue;
+  color: white;
+}
+
+.count {
+  font-size: 2rem;
+  margin: 5px;
 }
